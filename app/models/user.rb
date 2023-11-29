@@ -8,6 +8,7 @@ class User < ApplicationRecord
   def update_posts_counter
     self.posts_counter = posts.count
   end
+
   def recent_posts(limit: 3)
     posts.order(created_at: :desc).limit(limit)
   end
