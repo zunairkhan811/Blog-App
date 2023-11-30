@@ -6,10 +6,10 @@ class Comment < ApplicationRecord
   after_destroy :decrement_comment_counters
 
   def increment_comment_counters
-    post.increment(:comments_counter).save
+    post.increment!(:comments_counter)
   end
 
   def decrement_comment_counters
-    post.decrement(:comments_counter).save
+    post.decrement!(:comments_counter)
   end
 end
