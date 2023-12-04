@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'pages/index'
-  get 'users/index'
+  get 'users/:user_id/posts' => 'posts#index'
+  get 'users/:user_id/posts/:id' => 'posts#show'
+  get 'users' => 'users#index'
+  get 'user/:id' => 'users#show'
   root 'home#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
