@@ -8,10 +8,10 @@ RSpec.describe 'Users', type: :request do
     end
     it 'renders the index template for users' do
       get '/users'
-      expect(response.body).to include('This page shows the users list') 
+      expect(response.body).to include('This page shows the users list')
     end
   end
-  
+
   describe 'GET /show' do
     it 'returns http success for users show page' do
       get '/users/:id'
@@ -19,7 +19,7 @@ RSpec.describe 'Users', type: :request do
     end
     it 'renders the show template for users' do
       get '/users/:id'
-      expect(response.body).to include('Show Users with Id') 
+      expect(response.body).to include('Show Users with Id')
     end
   end
 end

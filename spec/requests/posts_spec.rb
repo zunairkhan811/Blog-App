@@ -8,7 +8,7 @@ RSpec.describe 'Posts', type: :request do
     end
     it 'renders the index template for posts' do
       get '/users/:user_id/posts'
-      expect(response.body).to include('Show posts related to user ID') 
+      expect(response.body).to include('Show posts related to user ID')
     end
   end
 
@@ -19,7 +19,7 @@ RSpec.describe 'Posts', type: :request do
     end
     it 'renders the show template for posts' do
       get '/users/:user_id/posts/:id'
-      expect(response.body).to include('Show user post with specific Id') 
+      expect(response.body).to include('Show user post with specific Id')
     end
   end
 end
