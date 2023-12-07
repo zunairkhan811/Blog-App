@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
   end
   def set_post
-    @post = @user.posts.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
   rescue ActiveRecord::RecordNotFound => error
     redirect_to posts_path, notice: error
   end
