@@ -1,8 +1,8 @@
-.custom-link {
+.user-link {
   color: #6500ff;
   transition: color 0.3s ease;
 }
 
-.custom-link:hover {
+.user-link:hover {
   color: #ff1600;
 }

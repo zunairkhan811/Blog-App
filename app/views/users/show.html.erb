@@ -1,1 +1,15 @@
-<h1>Show Users with Id</h1>
+<div class="col-lg-12">
+    <%= render 'shared/show_user', user: @user %>
+    <div class="card mb-3">
+        <h5 class="card-header">Bio</h5>
+        <div class="card-body">
+          <p class="card-text"><%= @user.bio %></p>
+        </div>
+    </div>
+    <div id="recent-posts-container">
+        <% @user.recent_posts.each do |post| %>
+            <%= render 'shared/post', post: post %> 
+        <% end %>
+    </div>
+    <%= link_to "See All Posts", user_posts_path(@user), class: 'btn btn-primary mt-2' %>
+</div>
