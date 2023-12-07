@@ -1,7 +1,7 @@
 <div class="card mt-2">
     <div class="card-body">
         <h5 class="card-title"><%= post.title %></h5>
-        <p class="card-text"><%= post.text %></p>
+        <p class="card-text"><%= post.text.slice(0,150).concat('...') %></p>
         <p class="card-text text-end">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
     </div>
 </div> 

@@ -11,5 +11,8 @@
             <%= render 'shared/post', post: post %> 
         <% end %>
     </div>
-    <%= link_to "See All Posts", user_posts_path(@user), class: 'btn btn-primary mt-2' %>
+    <div class="text-center mb-5 mt-2">
+        <%= link_to "See All Posts", user_posts_path(@user), class: 'btn btn-primary mt-2' %>
+    </div>
+    
 </div>
