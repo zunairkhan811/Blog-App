@@ -6,6 +6,13 @@
           <p class="card-text"><%= @user.bio %></p>
         </div>
     </div>
+    <% if @user.posts.empty?  %>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-text">No Post Available for this User</h4>
+        </div> 
+    </div>
+    <% else %>
     <div id="recent-posts-container">
         <% @user.recent_posts.each do |post| %>
             <%= render 'shared/post', post: post %> 
@@ -14,5 +21,6 @@
     <div class="text-center mb-5 mt-2">
         <%= link_to "See All Posts", user_posts_path(@user), class: 'btn btn-primary mt-2' %>
     </div>
+    <% end %>
     
 </div>
