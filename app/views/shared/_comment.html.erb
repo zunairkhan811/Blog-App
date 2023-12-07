@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="card-body">
+        <% if post.comments.empty? %>
+        <p class="text-primary">No Comments to Show</p>
+        <% else %>
+        <% post.recent_comments.each do |comment| %> 
+        <p><strong><%= comment.user.name %>:</strong> <span class="text-primary"><%= comment.text %></span></p>
+        <% end %>
+        <% end %>
+    </div>
+</div>
