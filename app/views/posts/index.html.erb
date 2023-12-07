@@ -1,4 +1,8 @@
-<div class="col-lg-12">
+<div class="col-lg-12 mb-5">
    <%= render 'shared/show_user', user: @user %>
+   <% @user.posts.each do |post| %>
+        <%= render 'shared/post', post: post %>
+        <%= render 'shared/comment', post: post %>        
+    <% end %>
 </div>
 
