@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5">
+        <%= form_with model: @post, url: user_posts_path do |form| %>
+          <div class="form-group">
+            <%= form.label "#{:title}(*)", class: "lead mb-2" %>
+            <%= form.text_field :title, class: "form-control form-control-lg rounded-0" %>
+            <% @post.errors.full_messages_for(:title).each do |message|  %>
+              <p class="text-danger"><%= message %></p>
+            <% end %>
+          </div>
+          <div class="form-group">
+            <%= form.label "#{:text}(*)", class: "lead mb-2" %>
+            <%= form.text_area :text, rows: 5, class: "form-control form-control-lg rounded-0" %>
+            <% @post.errors.full_messages_for(:text).each do |message|  %>
+              <p class="text-danger"><%= message %></p>
+            <% end %>
+          </div>
+          <div class="form-group text-center mt-3">
+            <%= form.submit "Create post", class: "btn btn-primary btn-sm" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</div>
+  
