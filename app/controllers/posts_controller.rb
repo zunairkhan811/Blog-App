@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   def create
     @post = @user.posts.new(post_params)
     if @post.save
-      redirect_to user_posts_path(current_user), notice: "Your Post has been successfully Created"
+      redirect_to user_posts_path(current_user), notice: 'Your Post has been successfully Created'
     else
       render :new, notice: error
     end
