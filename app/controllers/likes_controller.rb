@@ -12,10 +12,8 @@ class LikesController < ApplicationController
 
   def redirect_url
     if request.referer.present? && request.referer.include?("/users/#{params[:user_id]}/posts")
-      # If the referrer URL contains "/users/:user_id/posts", redirect to that URL
       request.referer
     else
-      # Default redirect URL if no referrer or referrer doesn't match the pattern
       user_posts_path(params[:user_id])
     end
   end
