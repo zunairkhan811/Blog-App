@@ -5,7 +5,9 @@
     </div>
    <% @user.posts.each do |post| %>
         <%= render 'shared/post', post: post %>
-        <%= render 'shared/comment', post: post %>        
+        <%= render 'shared/comment', post: post %>
+        <%= link_to 'Add Comment', user_post_path(@user, post.id) ,class: " mt-1 col-lg-2 btn btn-primary btn-outline-warning border-primary" %>
     <% end %>
+    
 </div>
 

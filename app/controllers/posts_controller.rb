@@ -33,6 +33,6 @@ class PostsController < ApplicationController
   def set_post
     @post = @user.posts.find(params[:id])
   rescue ActiveRecord::RecordNotFound => e
-    redirect_to posts_path, notice: e
+    redirect_to user_post_path, notice: e
   end
 end
