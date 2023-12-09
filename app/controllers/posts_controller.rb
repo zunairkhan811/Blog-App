@@ -9,6 +9,15 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def create
+    @post = @user.posts.new(post_params)
+    if @post.save
+      redirect_to user_posts_path(current_user), notice: 'Your Post has been successfully Created'
+    else
+      render :new, notice: error
+    end
+  end
+
   def show; end
 
   private
@@ -24,6 +33,6 @@ class PostsController < ApplicationController
   def set_post
     @post = @user.posts.find(params[:id])
   rescue ActiveRecord::RecordNotFound => e
-    redirect_to posts_path, notice: e
+    redirect_to user_post_path, notice: e
   end
 end
