@@ -1,9 +1,9 @@
 <div class="card">
     <div class="card-body">
-        <% if post.comments.empty? %>
+        <% if post.comments.includes(:user).empty? %>
         <p class="text-primary">No Comments to Show</p>
         <% else %>
-        <% post.comments.each do |comment| %> 
+        <% post.comments.includes(:user).each do |comment| %> 
         <p><strong><%= comment.user.name %>:</strong> <span class="text-primary"><%= comment.text %></span></p>
         <% end %>
         <% end %>
