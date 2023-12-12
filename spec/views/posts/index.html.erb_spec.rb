@@ -8,8 +8,8 @@ RSpec.describe 'Post Index Page', type: :system do
   before do
     10.times do |i|
       post = user.posts.create(title: "Post #{i + 1}", text: "Content #{i + 1}")
-      post.comments.create(user: user, text: "Comment #{i + 1}")
-      post.likes.create(user: user)
+      post.comments.create(user:, text: "Comment #{i + 1}")
+      post.likes.create(user:)
     end
   end
 

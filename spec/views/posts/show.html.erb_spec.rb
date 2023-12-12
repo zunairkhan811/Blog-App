@@ -8,10 +8,10 @@ RSpec.describe 'Post Show Page', type: :system do
   end
   before do
     5.times do |i|
-      user.comments.create(post: post, text: "Comment #{i + 1}")
+      user.comments.create(post:, text: "Comment #{i + 1}")
     end
     3.times do
-      user.likes.create(post: post)
+      user.likes.create(post:)
     end
   end
   describe 'Post Show Page' do
@@ -32,8 +32,8 @@ RSpec.describe 'Post Show Page', type: :system do
       expect(page).to have_content('Content 1')
     end
     it 'shows the username of each commentor' do
-      (1..5).each do |i|
-        expect(page).to have_content("Tom")
+      (1..5).each do |_i|
+        expect(page).to have_content('Tom')
       end
     end
     it 'shows the comment each commentor left' do
