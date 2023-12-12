@@ -8,6 +8,10 @@
         <%= render 'shared/comment', post: post %>
         <%= link_to 'Add Comment', user_post_path(@user, post.id) ,class: " mt-1 col-lg-2 btn btn-primary btn-outline-warning border-primary" %>
     <% end %>
+    <div class="text-center mt-2">
+        <button class="btn btn-primary">Pagination</button>
+    </div>
+    
     
 </div>
 
