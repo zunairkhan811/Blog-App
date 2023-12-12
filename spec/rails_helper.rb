@@ -61,7 +61,6 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-
   #  WINDOWS_HOST = `cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }'`.strip
   #  CHROMEDRIVER_URL = "http://#{WINDOWS_HOST}:9515/"
   #   class ApplicationSystemTestCase < ActionDispatch::SystemTestCase

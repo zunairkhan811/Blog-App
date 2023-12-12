@@ -12,7 +12,7 @@ RSpec.describe 'Posts', type: :request do
     end
     it 'Response Body includes correct placeholder text' do
       get '/users/:user_id/posts'
-      expect(response.body).to include('Show posts related to user ID')
+      expect(response.body).to include('Tom')
     end
   end
 
