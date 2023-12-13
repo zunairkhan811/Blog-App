@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  validates :email, presence:true
+  validates :email, presence: true
   validates :posts_counter, numericality: { greater_than_or_equal_to: 0 }
 
   def recent_posts(limit: 3)
