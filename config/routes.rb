@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
   # get 'users/:user_id/posts' => 'posts#index', as: 'user_posts'
   # get 'users/:user_id/posts/:id' => 'posts#show', as: 'user_post'
   # get 'users' => 'users#index', as: 'users'
