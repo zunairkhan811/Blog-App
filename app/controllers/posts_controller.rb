@@ -6,11 +6,13 @@ class PostsController < ApplicationController
   end
 
   def new
+    # @user = current_user
     @post = Post.new
   end
 
   def create
     @post = @user.posts.new(post_params)
+    authorize! :create, @post
     if @post.save
       redirect_to user_posts_path(current_user), notice: 'Your Post has been successfully Created'
     else
@@ -22,10 +24,11 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    authorize! :destroy, @post
     if @post.destroy
         redirect_to user_path(current_user), notice: 'Post has been deleted successfully'
     end
-end
+  end
 
   private
 
