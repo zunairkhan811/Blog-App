@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  enum role: [:user, :admin], _default: :user
+  before_create :set_default_role
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -12,5 +14,10 @@ class User < ApplicationRecord
 
   def recent_posts(limit: 3)
     posts.order(created_at: :asc).limit(limit)
+  end
+  private
+  def set_default_role
+    self.role = :admin if email.downcase == 'admin@gmail.com'
+    self.role ||= :user
   end
 end

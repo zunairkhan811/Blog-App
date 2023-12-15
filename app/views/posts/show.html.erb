@@ -1,14 +1,5 @@
 <div class="col-lg-12 mb-5">
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <h3 class="font-weight-bold col-sm-7 mb-0"><%= @post.title %> By <%= @user.name %></h3>
-                <span class="card-text my-1 text-end col-sm-5">Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></span>
-            </div>
-            <p class="card-text mt-5"><%= @post.text %></p>
-            <%= render 'shared/like_form', like: @like, post: @post %>   
-        </div> 
-    </div>
+    <%= render 'shared/show_post'%>
+    <!-- <% Rails.logger.debug "Current User Role: #{@post.id}" %> -->
     <%= render 'shared/full_comment', post: @post %>
-    <%= render 'shared/comment_form', comment: @comment %> 
 </div>

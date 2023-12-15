@@ -4,6 +4,17 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+
+    if user.admin?
+      can :manage, :all
+    else
+      can :read, :all
+      can :create, Post, user_id: user.id
+      can :update, Post, user_id: user.id
+      can :delete, Post, user_id: user.id
+      can :create, Comment
+      can :create, Like
+    end
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?
