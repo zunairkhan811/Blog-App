@@ -6,19 +6,29 @@ class PostsController < ApplicationController
   end
 
   def new
+    # @user = current_user
     @post = Post.new
   end
 
   def create
     @post = @user.posts.new(post_params)
+    authorize! :create, @post
     if @post.save
       redirect_to user_posts_path(current_user), notice: 'Your Post has been successfully Created'
     else
-      render :new, notice: error
+      render :new, notice: 'Error in creating a post'
     end
   end
 
   def show; end
+
+  def destroy
+    @post = Post.find(params[:id])
+    authorize! :destroy, @post
+    return unless @post.destroy
+
+    redirect_to user_path(current_user), notice: 'Post has been deleted successfully'
+  end
 
   private
 

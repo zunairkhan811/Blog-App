@@ -1,7 +1,14 @@
 <div class="col-lg-12">
     <%= render 'shared/show_user', user: @user %>
     <div class="mb-2 mt-2">
+        <% if can? :create, @post%>
         <%= link_to "Create New Post", new_user_post_path(current_user.id), class: 'btn btn-primary' %>
+        <% end %>
+            <!-- <% if current_user == @user && can?(:create, Post) %>
+                <%= link_to "Create New Post(User)", new_user_post_path(current_user.id), class: 'btn btn-primary' %>
+            <% elsif current_user.admin? %>
+              <%= link_to "Create New Post(Admin)", new_user_post_path(current_user.id), class: 'btn btn-primary' %>
+            <% end %> -->
     </div>
     <div class="card mb-3">
         <h5 class="card-header">Bio</h5>

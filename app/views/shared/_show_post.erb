@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <h3 class="font-weight-bold col-lg-10 mb-0"><%= @post.title %> By <%= @post.author.name %></h3>
+            <% if can? :destroy, @post %>
+            <span class="text-end col-lg-2">
+                <%= link_to 'Delete Post', user_post_path(current_user.id, @post.id), method: :delete, class: "btn btn-danger", confirm: "Are you sure you want to delete this post?"  %>
+            </span>
+            <% end %>
+        </div>
+        <div class= "row">
+            <span class="card-text my-1 text-end col-lg-12">Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></span>
+        </div>
+        
+        <p class="card-text mt-5"><%= @post.text %></p>
+        <%= render 'shared/like_form', like: @like, post: @post %>   
+    </div> 
+</div>
