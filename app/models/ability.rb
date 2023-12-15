@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -10,8 +8,8 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      can [:create, :destroy], Post, author_id: user.id
-      can [:create, :destroy], Comment, user_id: user.id
+      can %i[create destroy], Post, author_id: user.id
+      can %i[create destroy], Comment, user_id: user.id
       can :create, Like
     end
     # Define abilities for the user here. For example:

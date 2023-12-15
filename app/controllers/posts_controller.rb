@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to user_posts_path(current_user), notice: 'Your Post has been successfully Created'
     else
-      render :new, notice: "Error in creating a post"
+      render :new, notice: 'Error in creating a post'
     end
   end
 
@@ -25,9 +25,9 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     authorize! :destroy, @post
-    if @post.destroy
-        redirect_to user_path(current_user), notice: 'Post has been deleted successfully'
-    end
+    return unless @post.destroy
+
+    redirect_to user_path(current_user), notice: 'Post has been deleted successfully'
   end
 
   private
