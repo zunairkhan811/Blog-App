@@ -1,12 +1,22 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      resources :users do
+        resources :user_posts, only: [:index]
+      end
+  
+      resources :posts do
+        resources :post_comments, only: [:index, :create]
+      end
+    end
+  end
+
+
+
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-  # get 'users/:user_id/posts' => 'posts#index', as: 'user_posts'
-  # get 'users/:user_id/posts/:id' => 'posts#show', as: 'user_post'
-  # get 'users' => 'users#index', as: 'users'
-  # get 'users/:id' => 'users#show', as: 'user'
   root 'users#index'
   resources :users do
     resources :posts do
