@@ -10,6 +10,19 @@ module Api
         render json: comments
       end
 
+      def create
+        random_user = User.order('RANDOM()').first
+        comment = @post.comments.new(comment_params)
+        comment.user = random_user
+
+        if comment.save
+          render json: comment, status: :created
+        else
+          puts "Error saving comment: #{comment.errors.full_messages}"
+          render json: comment.errors, status: :unprocessable_entity
+        end
+      end
+
       private
 
       def set_post
