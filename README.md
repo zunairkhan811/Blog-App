@@ -78,7 +78,6 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
     cd blog-app
-
     git clone https://github.com/zunairkhan811/blog-app.git
 
 
