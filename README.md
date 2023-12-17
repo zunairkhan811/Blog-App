@@ -17,6 +17,7 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
+  - [Blog API](#Blog-API)
   - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -58,15 +59,11 @@
 ### Key Features <a name="key-features"></a>
 
 - **[App for blog, create post, add likes and comments]**
+- **[Blog API is also created. API links are accessible at https://localhost:3000/api-docs/index.html after running server by running `rails s` command in terminal]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
-
-To get a local copy up and running, follow these steps.
-
-- clone this https://github.com/zunairkhan811/blog-app.git
-
 
 ### Prerequisites
 
@@ -78,31 +75,49 @@ In order to run this project you need:
 ### Setup
 
 Clone this repository to your desired folder:
-<ul>
-<li>cd my-folder</li>
-<li>git clone https://github.com/zunairkhan811/blog-app.git</li>
-</ul>
+
+ `cd my-folder`
+
+ `git clone https://github.com/zunairkhan811/blog-app.git`
+
 
 ### Install
 
 Install this project with:
-<ul>
-<li>bundle install</li>
-</ul>
+
+`bundle install`
 
 ### Usage
 
 To run the project, execute the following command:
-<ul>
-<li>rails s</li>
-</ul>
+
+`rail s`
 
 ### Run tests
 
 <!-- To run tests, run the following command: Install through : gem install rspec -->
 
-Run: ***Not Available for now***
+Run: `rspec spec`
 
+### Blog API
+Blog API is also created:
+
+User can list all user posts through the below link
+`http://localhost:3000/api/v1/users/:user_id/user_posts `
+
+User can see the list of all comments for a posts through the below link
+`http://localhost:3000/api/v1/posts/:post_id/post_comments`
+
+User can create a comment to a post with the following Url link:
+`http://localhost:3000/api/v1/posts/:post_id/post_comments`
+
+### API Docs:
+
+API docs are created and are accessible by following steps:
+
+`Run rails s command in the terminal`
+
+`Paste this Link http://localhost:3000/api-docs/index.html in the Browser.`
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Author <a name="author"></a>
@@ -112,7 +127,7 @@ Run: ***Not Available for now***
 
 - GitHub: [@zunairkhan811](https://github.com/zunairkhan811)
 - Twitter: [@zunairkhan811](https://twitter.com/zunairkhan811)
-- LinkedIn: [mzunairkhan](https://www.linkedin.com/in/mzunairkhan)
+- LinkedIn: [@mzunairkhan](https://www.linkedin.com/in/mzunairkhan)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -121,7 +136,7 @@ Run: ***Not Available for now***
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- [ ] **[Data connections, Adding Validations, Creating Full Blog page App]**
+- [ ] **[Will add more features in the app]**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -151,7 +166,7 @@ I would like to thank Microverse and my Code Reviewers.
 
 - **[What is Blog App?]**
 
-  - [In this project, we will creating posts, and adding likes and comments in rails framework]
+  - [In this project, we will creating users, posts, and adding likes and comments in rails framework. Blog API is also created alongwith API docs.]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
