@@ -17,7 +17,8 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Blog API](#Blog-API)
+  - [Blog API](#blog-api)
+  - [API Docs](#api-docs)
   - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -76,48 +77,57 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
- `cd my-folder`
+    cd blog-app
 
- `git clone https://github.com/zunairkhan811/blog-app.git`
+    git clone https://github.com/zunairkhan811/blog-app.git
 
 
 ### Install
 
 Install this project with:
 
-`bundle install`
+    bundle install
 
 ### Usage
 
 To run the project, execute the following command:
 
-`rail s`
+    rail s
 
 ### Run tests
 
 <!-- To run tests, run the following command: Install through : gem install rspec -->
 
-Run: `rspec spec`
+Run: 
+
+    rspec spec
 
 ### Blog API
 Blog API is also created:
 
 User can list all user posts through the below link
-`http://localhost:3000/api/v1/users/:user_id/user_posts `
+
+    http://localhost:3000/api/v1/users/:user_id/user_posts
 
 User can see the list of all comments for a posts through the below link
-`http://localhost:3000/api/v1/posts/:post_id/post_comments`
+
+    http://localhost:3000/api/v1/posts/:post_id/post_comments
 
 User can create a comment to a post with the following Url link:
-`http://localhost:3000/api/v1/posts/:post_id/post_comments`
+
+    http://localhost:3000/api/v1/posts/:post_id/post_comments
 
 ### API Docs:
 
 API docs are created and are accessible by following steps:
 
-`Run rails s command in the terminal`
+Run below command in the terminal
 
-`Paste this Link http://localhost:3000/api-docs/index.html in the Browser.`
+    rails s
+
+Paste this Link below in the Browser
+
+    http://localhost:3000/api-docs/index.html
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Author <a name="author"></a>
