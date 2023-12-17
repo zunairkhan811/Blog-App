@@ -1,0 +1,98 @@
+---
+openapi: 3.0.1
+info:
+  title: Blog API
+  version: v1
+  description: "This API gives shows the number of Posts created by a user \n        and
+    also show the list of Comments and also have the ability to create comments\n
+    \       by the user in the database"
+paths:
+  "/api/v1/users/{user_id}/user_posts":
+    get:
+      summary: Retrieves posts for a user
+      tags:
+      - UserPosts
+      parameters:
+      - name: user_id
+        in: path
+        description: ID of the user
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    title:
+                      type: string
+                required:
+                - id
+                - title
+  "/api/v1/posts/{post_id}/post_comments":
+    get:
+      summary: Retrieves comments for a post
+      tags:
+      - PostComments
+      parameters:
+      - name: post_id
+        in: path
+        description: ID of the post
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    text:
+                      type: string
+                required:
+                - id
+                - text
+    post:
+      summary: Creates a comment for a post
+      tags:
+      - PostComments
+      parameters:
+      - name: post_id
+        in: path
+        description: ID of the post
+        required: true
+        schema:
+          type: integer
+      responses:
+        '201':
+          description: Created
+        '422':
+          description: Unprocessable Entity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+              - text
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: http://localhost:3000/

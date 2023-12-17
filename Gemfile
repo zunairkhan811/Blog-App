@@ -74,4 +74,5 @@ end
 gem 'bootstrap_form', '~> 5.4'
 gem 'cancancan'
 gem 'devise', '~> 4.9'
-gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'rswag'gem 'rubocop', '>= 1.0', '< 2.0'
+
